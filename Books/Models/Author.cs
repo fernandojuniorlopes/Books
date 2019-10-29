@@ -11,6 +11,7 @@ namespace Books.Models
         public int AuthorId { get; set; }
 
         [Required]
-        public string MyProperty { get; set; }
+        [Display(Name = "Name")]
+        public string MyProperty { get; set; }//MyProperty é na realidade NOME mas enganei-me
     }
 }
