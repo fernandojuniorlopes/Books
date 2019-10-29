@@ -60,7 +60,10 @@ namespace Books.Controllers
             {
                 _context.Add(author);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                ViewBag.Title = "Author added successfully";
+                ViewBag.Message = "New author created successfully!";
+                return View("Success");
             }
             return View(author);
         }
@@ -111,7 +114,9 @@ namespace Books.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                ViewBag.Title = "Author updated successfully";
+                ViewBag.Message = "Author updated successfully!";
+                return View("Success");
             }
             return View(author);
         }
